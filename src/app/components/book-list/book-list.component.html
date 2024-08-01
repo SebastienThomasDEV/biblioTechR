@@ -1,1 +1,8 @@
-<p>book-list works!</p>
+<h3>Liste de livres</h3>
+<ng-container *ngIf="books">
+  <div *ngFor="let book of books!">
+    <p> {{ book.title }}</p>
+    <p> {{ book.author }}</p>
+    <p> {{ book.description }}</p>
+  </div>
+</ng-container>
