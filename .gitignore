@@ -38,6 +38,7 @@ package-lock.json
 testem.log
 /typings
 
+db.json
 # System files
 .DS_Store
 Thumbs.db
