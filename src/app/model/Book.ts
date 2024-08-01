@@ -6,4 +6,5 @@ export default interface Book {
   author: string;
   description: string;
   status: EnumStatus;
+  description: string;
 }
