@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import Book from "../../model/Book";
 import {EnumStatus} from "../../utils/EnumStatus";
@@ -17,6 +17,9 @@ import {PopupService} from "../../service/popup.service";
   templateUrl: './book-form.component.html',
 })
 export class BookFormComponent implements OnInit {
+
+
+  @Output() closeSideNav: EventEmitter<boolean> = new EventEmitter(); // boolean pour fermer le sideNav
 
   // error de feedback pour l'utilisateur
 
@@ -63,6 +66,7 @@ export class BookFormComponent implements OnInit {
     const book: Book = this.formBook.value;
     const validity = this.checkControlsInvalidity(this.formBook);
     if (validity.length > 0) {
+      this.popupService.trigger({type: 'error', message: `The following fields are invalid: ${validity.join(', ')}`, title: 'Error'});
       return;
     }
     this.bookService.createBook(book).subscribe({
@@ -70,7 +74,7 @@ export class BookFormComponent implements OnInit {
         const state = {action: 'create', props: {book}};
         this.stateService.transfer(state);
         this.popupService.trigger({type: 'success', message: 'Book created successfully', title: 'Success'});
-        return this.router.navigate(['/books']);
+        this.closeSideNav.emit(false);
       },
       error: (error) => {
         this.popupService.trigger({type: 'error', message: error, title: 'Error'});
@@ -95,5 +99,9 @@ export class BookFormComponent implements OnInit {
   toggleErrorClass(control: string) {
     return this.formBook.controls[control].invalid && this.formBook.controls[control].touched;
   }
+
+
+
+
 
 }
