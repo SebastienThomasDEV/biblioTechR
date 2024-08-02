@@ -1,8 +1,23 @@
-<h3>Liste de livres</h3>
-<ng-container *ngIf="books">
-  <div *ngFor="let book of books!">
-    <p> {{ book.title }}</p>
-    <p> {{ book.author }}</p>
-    <p> {{ book.description }}</p>
-  </div>
-</ng-container>
+<div class="list__container">
+  <h3 class="list__title">Book list</h3>
+  <ng-container *ngIf="books">
+      <div *ngFor="let book of books!"
+           class="list__item">
+        <p class="item__title">Titre: {{ book.title }}</p>
+        <p class="item__author">Auteur: {{ book.author }}</p>
+        <p class="mb-2">Description: {{ book.description }}</p>
+        <p class="mb-4">Statut: {{ book.status }}</p>
+        <div class="flex space-x-2">
+          <button class="button__edit">
+            Edit
+          </button>
+          <button class="button__remove">
+            Remove
+          </button>
+          <button class="button__details">
+            <a routerLink="/details">View details</a>
+          </button>
+        </div>
+      </div>
+  </ng-container>
+</div>
