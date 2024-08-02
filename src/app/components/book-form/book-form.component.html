@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmit()" class="formBook" [formGroup]="formBook">
+  <div class="mb-4">
+    <label class="formBook__label" for="title">Titre</label>
+    <input class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('title')}"
+           type="text" id="title" name="name" formControlName="title" placeholder="John Doe">
+  </div>
+  <div class="mb-4">
+    <label class="formBook__label" for="author">Auteur</label>
+    <input class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('author')}"
+           type="text" id="author" name="author"  formControlName="author" placeholder="john@example.com">
+  </div>
+  <div class="mb-4">
+    <label class="formBook__label" for="description">Description</label>
+    <textarea class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('description')}"
+              id="description" name="description" formControlName="description" placeholder="Description"></textarea>
+  </div>
+  <div class="mb-4">
+    <label class="formBook__label" for="status">Status</label>
+    <select id="status" class="formBook__input" formControlName="status" [ngClass]="{'formBook__input--error': toggleErrorClass('status')}">
+      <option value="borrowed" selected>Emprunté</option>
+      <option value="available">Disponible</option>
+    </select>
+  </div>
+  <button
+    class="formBook__button"
+    type="submit">Ajouter le livre
+  </button>
+</form>
