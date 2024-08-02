@@ -5,11 +5,12 @@ import {BookFormComponent} from "./components/book-form/book-form.component";
 import {StateService} from "./service/state.service";
 import {Popup, PopupService} from "./service/popup.service";
 import {PopupComponent} from "./components/popup/popup.component";
+import {NavBarComponent} from "./components/nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BookListComponent, BookFormComponent, PopupComponent],
+  imports: [RouterOutlet, BookListComponent, BookFormComponent, PopupComponent, NavBarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

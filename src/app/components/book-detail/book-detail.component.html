@@ -1,0 +1,17 @@
+<div class="list__container">
+  <h3 class="list__title">Book details</h3>
+  <div *ngIf="book" class="list__item">
+    <p class="item__title">Titre: {{ book.title }}</p>
+    <p class="item__author">Auteur: {{ book.author }}</p>
+    <p class="mb-4">Description: {{ book.description }}</p>
+    <p class="mb-4">Statut: {{ book.status }}</p>
+    <div class="flex space-x-2">
+      <button class="button__edit">
+        Edit
+      </button>
+      <button class="button__remove">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>
