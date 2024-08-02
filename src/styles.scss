@@ -8,7 +8,7 @@
  * Form création de livre
  */
 .formBook {
-  @apply w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md;
+  @apply w-full mx-auto rounded-md;
 
   .formBook__label {
     @apply block text-gray-700 text-sm font-bold mb-2;
@@ -18,8 +18,13 @@
     @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
   }
 
+  .formBook__select {
+    @apply shadow  border rounded w-full py-2 px-3 bg-white leading-tight;
+  }
+
+
   .formBook__button {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+    @apply bg-pink-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
   }
 
   .formBook__input--error {
@@ -27,9 +32,13 @@
   }
 }
 
+.badge {
+  @apply inline-flex items-center rounded-md  px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10;
+}
+
 
 .list__container {
-  @apply max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-5 p-6;
+  @apply mx-auto bg-white rounded-xl overflow-hidden;
 }
 
 .list__title {
@@ -37,7 +46,7 @@
 }
 
 .list__item {
-  @apply max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-5 mx-5 p-6;
+  @apply max-w-md  bg-white rounded-xl shadow-md border overflow-hidden md:max-w-2xl my-5 mx-5 p-6;
 }
 
 .item__title {

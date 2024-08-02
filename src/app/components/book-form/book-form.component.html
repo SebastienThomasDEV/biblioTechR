@@ -1,28 +1,30 @@
-<form (ngSubmit)="onSubmit()" class="formBook" [formGroup]="formBook">
+<form (ngSubmit)="onSubmit()" class="formBook p-6" [formGroup]="formBook">
   <div class="mb-4">
-    <label class="formBook__label" for="title">Titre</label>
+    <label class="formBook__label" for="title">Title</label>
     <input class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('title')}"
-           type="text" id="title" name="name" formControlName="title" placeholder="John Doe">
+           type="text" id="title" name="name" formControlName="title" placeholder="Harry Potter: The Philosopher's Stone">
   </div>
   <div class="mb-4">
-    <label class="formBook__label" for="author">Auteur</label>
+    <label class="formBook__label" for="author">Author</label>
     <input class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('author')}"
-           type="text" id="author" name="author"  formControlName="author" placeholder="john@example.com">
+           type="text" id="author" name="author"  formControlName="author" placeholder="J.K. Rowling">
   </div>
   <div class="mb-4">
     <label class="formBook__label" for="description">Description</label>
     <textarea class="formBook__input" [ngClass]="{'formBook__input--error': toggleErrorClass('description')}"
-              id="description" name="description" formControlName="description" placeholder="Description"></textarea>
+              id="description" name="description" formControlName="description" placeholder="This is a book about a young wizard...">
+    </textarea>
   </div>
   <div class="mb-4">
     <label class="formBook__label" for="status">Status</label>
-    <select id="status" class="formBook__input" formControlName="status" [ngClass]="{'formBook__input--error': toggleErrorClass('status')}">
-      <option value="borrowed" selected>Emprunté</option>
-      <option value="available">Disponible</option>
+    <select id="status" class="formBook__select" formControlName="status" [ngClass]="{'formBook__input--error': toggleErrorClass('status')}">
+      <option value="borrowed" selected>Borrowed</option>
+      <option value="available">Available</option>
     </select>
   </div>
   <button
-    class="formBook__button"
-    type="submit">Ajouter le livre
+    class="formBook__button w-full whitespace-nowrap"
+    type="submit">
+    Add book
   </button>
 </form>
