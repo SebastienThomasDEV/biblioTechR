@@ -1,29 +1,39 @@
-
-<form (ngSubmit)="onSubmit()" class="formBook" [formGroup]="formBook">
-  <div class="mb-4">
-    <label class="formBook__label" for="title">Titre</label>
-    <input class="formBook__input"
-           type="text" id="title" name="name" formControlName="title" placeholder="John Doe">
+<div class="min-h-screen p-0 sm:p-12">
+  <div class="mx-auto max-w-md px-6 py-12 bg-white border-0 shadow-lg sm:rounded-3xl">
+    <form (ngSubmit)="onSubmit()" class="formBook" [formGroup]="formBook">
+      <div class="mb-4">
+        <label class="formBook__label" for="title">Title</label>
+        <input class="formBook__input"
+               type="text" id="title" name="name" formControlName="title" placeholder="John Doe">
+      </div>
+      <div class="mb-4">
+        <label class="formBook__label" for="author">Author</label>
+        <input class="formBook__input"
+               type="text" id="author" name="author" formControlName="author" placeholder="john@example.com">
+      </div>
+      <div class="mb-4">
+        <label class="formBook__label" for="description">Description</label>
+        <textarea class="formBook__input"
+                  id="description" name="description" formControlName="description"
+                  placeholder="Description"></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="formBook__label" for="status">Status</label>
+        <select id="status" class="formBook__select" formControlName="status">
+          <option value="borrowed" selected>Borrowed</option>
+          <option value="available">Available</option>
+        </select>
+      </div>
+      <div class="flex space-x-2">
+        <button
+          class="formBook__button"
+          type="submit">Edit book
+        </button>
+        <button
+          class="button__remove"
+          type="button" (click)="onCancel()">Cancel
+        </button>
+      </div>
+    </form>
   </div>
-  <div class="mb-4">
-    <label class="formBook__label" for="author">Auteur</label>
-    <input class="formBook__input"
-           type="text" id="author" name="author"  formControlName="author" placeholder="john@example.com">
-  </div>
-  <div class="mb-4">
-    <label class="formBook__label" for="description">Description</label>
-    <textarea class="formBook__input"
-              id="description" name="description" formControlName="description" placeholder="Description"></textarea>
-  </div>
-  <div class="mb-4">
-    <label class="formBook__label" for="status">Status</label>
-    <select id="status" class="formBook__input" formControlName="status">
-      <option value="borrowed" selected>Emprunté</option>
-      <option value="available">Disponible</option>
-    </select>
-  </div>
-  <button
-    class="formBook__button"
-    type="submit">Modifier le livre
-  </button>
-</form>
+</div>
