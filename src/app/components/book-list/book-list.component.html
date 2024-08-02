@@ -5,9 +5,9 @@
   <div class="grid grid-cols-2 w-full" >
     <ng-container *ngIf="books">
         <div *ngFor="let book of books!" class="grid-cols-1 list__item">
-          <p class="item__title">Titre: {{ book.title }}</p>
-          <p class="item__author">Auteur: {{ book.author }}</p>
-          <p class="mb-4">Statut: <span class="badge" [ngClass]="{
+          <p class="item__title">Title: {{ book.title }}</p>
+          <p class="item__author">Author: {{ book.author }}</p>
+          <p class="mb-4">Status: <span class="badge" [ngClass]="{
             'text-green-500 bg-green-50': book.status === 'available',
             'text-red-500 bg-red-50': book.status === 'borrowed'
           }">{{book.status}}</span></p>

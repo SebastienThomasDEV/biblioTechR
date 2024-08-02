@@ -1,11 +1,11 @@
 {
   "books": [
     {
-      "id": "1",
       "title": "To Kill a Mockingbird!",
       "author": "Harper Lee",
       "description": "A novel about the serious issues of rape and racial inequality.",
-      "status": "available"
+      "status": "available",
+      "id": "1"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
     },
     {
       "title": "Pride and Prejudice",
-      "author": "Jane AustenKsjbhdzs",
+      "author": "Jane Austen",
       "description": "A romantic novel that charts the emotional development of the protagonist, Elizabeth Bennet.",
       "status": "borrowed",
       "id": "3"
@@ -62,13 +62,6 @@
       "author": "Aldous Huxley",
       "description": "A dystopian social science fiction novel and cautionary tale.",
       "status": "borrowed"
-    },
-    {
-      "id": "ae97",
-      "title": "zefzref",
-      "author": "zefzr",
-      "description": "zrrzg",
-      "status": "available"
     }
   ]
 }

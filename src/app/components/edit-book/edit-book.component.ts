@@ -56,4 +56,9 @@ export class EditBookComponent implements OnInit {
     }
   }
 
+  protected readonly oncancel = oncancel;
+
+  onCancel() {
+    this.router.navigate(['']);
+  }
 }
