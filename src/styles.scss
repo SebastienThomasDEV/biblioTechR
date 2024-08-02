@@ -19,9 +19,8 @@
   }
 
   .formBook__select {
-    @apply shadow  border rounded w-full py-2 px-3 bg-white leading-tight;
+    @apply shadow border rounded w-full py-2 px-3 bg-white leading-tight;
   }
-
 
   .formBook__button {
     @apply bg-pink-950 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
@@ -32,39 +31,50 @@
   }
 }
 
+// badge pour les statuts
 .badge {
   @apply inline-flex items-center rounded-md  px-2 py-1 text-xs font-medium ring-1 ring-inset ring-red-600/10;
 }
 
 
+/**
+ * Liste des livres
+ */
 .list__container {
   @apply mx-auto bg-white rounded-xl overflow-hidden;
 }
 
+// titre de la liste
 .list__title {
   @apply text-center text-2xl font-bold my-4;
 }
 
+// item de la liste
 .list__item {
   @apply max-w-md  bg-white rounded-xl shadow-md border overflow-hidden md:max-w-2xl my-5 mx-5 p-6;
 }
 
+// titre d'un item de la liste
 .item__title {
   @apply uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-2;
 }
 
+// auteur d'un item de la liste
 .item__author {
   @apply block mt-1 text-lg leading-tight font-medium text-black mb-2;
 }
 
+// description d'un item de la liste
 .button__edit {
   @apply flex-shrink-0 p-2 border-2 rounded hover:text-white text-gray-500 border-gray-500 hover:bg-gray-500;
 }
 
+// bouton de suppression d'un item de la liste
 .button__remove {
   @apply flex-shrink-0 p-2 border-2 rounded text-red-500 border-red-500 hover:text-white hover:bg-red-500;
 }
 
+// bouton de détails d'un item de la liste
 .button__details {
   @apply flex-shrink-0 p-2 border-2 rounded text-indigo-500 border-indigo-500 hover:text-white hover:bg-indigo-500;
 }
