@@ -1,8 +1,22 @@
-<h3>Liste de livres</h3>
-<ng-container *ngIf="books">
-  <div *ngFor="let book of books!">
-    <p> {{ book.title }}</p>
-    <p> {{ book.author }}</p>
-    <p> {{ book.description }}</p>
-  </div>
-</ng-container>
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-5">
+  <h3 class="text-center text-2xl font-bold my-4">Book list</h3>
+  <ng-container *ngIf="books">
+    <div *ngFor="let book of books!"
+         class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl my-5 mx-5 p-6">
+      <p class="uppercase tracking-wide text-sm text-indigo-500 font-semibold mb-2">Titre: {{ book.title }}</p>
+      <p class="block mt-1 text-lg leading-tight font-medium text-black mb-2">Auteur: {{ book.author }}</p>
+      <p class="mb-2">Description: {{ book.description }}</p>
+      <p class="mb-4">Statut: {{ book.status }}</p>
+      <div class="flex space-x-2">
+        <button
+          class="flex-no-shrink p-2 border-2 rounded hover:text-white text-gray-500 border-gray-500 hover:bg-gray-500">
+          Edit
+        </button>
+        <button
+          class="flex-no-shrink p-2 border-2 rounded text-red-500 border-red-500 hover:text-white hover:bg-red-500">
+          Remove
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
