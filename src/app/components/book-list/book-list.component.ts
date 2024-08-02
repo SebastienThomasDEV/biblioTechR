@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../service/book.service";
-import {Observable} from "rxjs";
 import Book from "../../model/Book";
 import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-book-list',
@@ -10,7 +10,9 @@ import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
   imports: [
     AsyncPipe,
     NgForOf,
-    NgIf
+    NgIf,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
