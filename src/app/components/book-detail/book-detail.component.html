@@ -1,15 +1,18 @@
 <div class="list__container">
   <h3 class="list__title">Book details</h3>
-  <div *ngIf="book" class="list__item">
-    <p class="item__title">Titre: {{ book.title }}</p>
-    <p class="item__author">Auteur: {{ book.author }}</p>
-    <p class="mb-4">Description: {{ book.description }}</p>
-    <p class="mb-4">Statut: {{ book.status }}</p>
+  <div class="grid-cols-1 list__item">
+    <p class="item__title">Title: {{ book?.title }}</p>
+    <p class="item__author">Author: {{ book?.author }}</p>
+    <p class="mb-4">Status: <span class="badge" [ngClass]="{
+            'text-green-500 bg-green-50': book?.status === 'available',
+            'text-red-500 bg-red-50': book?.status === 'borrowed'
+          }">{{book?.status}}</span></p>
+    <p class="item__description pb-6">Description: {{ book?.description }}</p>
     <div class="flex space-x-2">
-      <button class="button__edit">
+      <button (click)="editBook()" class="button__edit" >
         Edit
       </button>
-      <button class="button__remove">
+      <button class="button__remove" (click)="deleteBook()">
         Remove
       </button>
     </div>

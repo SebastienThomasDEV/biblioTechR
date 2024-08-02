@@ -18,7 +18,7 @@ import {PopupService} from "../../service/popup.service";
 })
 export class BookFormComponent implements OnInit {
 
-
+  // EventEmitter pour fermer la sideNav
   @Output() closeSideNav: EventEmitter<boolean> = new EventEmitter(); // boolean pour fermer le sideNav
 
   // error de feedback pour l'utilisateur
@@ -86,6 +86,12 @@ export class BookFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Méthode qui checke si les champs du formulaire sont invalides
+   * Elle retourne un tableau contenant les champs invalides
+   *
+   * @param form
+   */
   checkControlsInvalidity(form: FormGroup) {
     const invalidControls = [];
     for (const key in form.controls) {
@@ -96,6 +102,14 @@ export class BookFormComponent implements OnInit {
     return invalidControls;
   }
 
+
+  /**
+   * Méthode qui checke si un champ est invalide
+   * Elle retourne un boolean
+   *
+   * @param control
+   * @returns boolean
+   * */
   toggleErrorClass(control: string) {
     return this.formBook.controls[control].invalid && this.formBook.controls[control].touched;
   }
