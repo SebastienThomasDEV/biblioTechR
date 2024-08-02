@@ -1,5 +1,5 @@
 <ng-container *ngIf="popUps.length > 0">
-  <div *ngFor="let popup of popUps" [ngClass]="getBorderColor(popup.type)" class="fixed top-0 right-0 m-6 w-72 divide-y rounded-md border shadow-md bg-white">
+  <div *ngFor="let popup of popUps" [ngClass]="getBorderColor(popup.type)" class="fixed bottom-0 right-0 m-6 w-96 divide-y rounded-md border-2 shadow-md bg-white z-50">
     <div class="flex gap-2 px-3 py-3 items-start">
       <div class="flex-1">
         <h3 class="text-sm font-bold" [ngClass]="getTextColor(popup.type)">{{popup.title}}</h3>
@@ -8,3 +8,4 @@
     </div>
   </div>
 </ng-container>
+

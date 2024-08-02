@@ -7,11 +7,8 @@ import State from "../model/State";
 })
 export class StateService {
   private notifySubject = new Subject<State>();
-
   data$ = this.notifySubject.asObservable();
-
   transfer(data: State) {
     this.notifySubject.next(data);
   }
-
 }

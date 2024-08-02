@@ -16,10 +16,7 @@ import {NavBarComponent} from "./components/nav-bar/nav-bar.component";
 })
 export class AppComponent implements OnInit {
   title = 'test';
-
-  constructor() {
-  }
-
+  constructor() {}
 
   ngOnInit() {
     console.log('AppComponent initialized');
